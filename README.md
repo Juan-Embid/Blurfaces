@@ -7,3 +7,7 @@ Si no funciona en tu ordenador es porque tendrás que descargarte el openCV (Vis
   4. Darle a overview y seleccionar (PyPI)
   5. Buscar opencv (la última actualización) yo seleccioné opencv-contrib-python (4.5.1.48)
   6. Ya puedes ejecutar el programa
+
+## OTHER REQUIREMENTS 
+- Python 3.6
+- `pip install opencv-contrib-python`
