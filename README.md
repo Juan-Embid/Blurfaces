@@ -1,5 +1,5 @@
 # Blurfaces
-Si no funciona en tu ordenador es porque tendrás que descargarte el openCV. Para hacerlo, lo que hice yo fue:
+Si no funciona en tu ordenador es porque tendrás que descargarte el openCV (Visual Studio). Para hacerlo, lo que hice yo fue:
 
   1. Solution explorer
   2. Python enviroments
