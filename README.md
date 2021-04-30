@@ -21,4 +21,4 @@ Or:
 Basic Program requirements and:
 
 - CMake installation
-- dlib installation (CMake installation required to install dlib
+- dlib installation (CMake installation required to install dlib)
