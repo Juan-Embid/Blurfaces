@@ -21,5 +21,4 @@ Or:
 Basic Program requirements and:
 
 - CMake installation
-
 - dlib installation
