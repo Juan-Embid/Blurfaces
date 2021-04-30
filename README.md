@@ -20,6 +20,6 @@ Or:
 
 Basic Program requirements and:
 
--CMake installation
+- CMake installation
 
--dlib installation
+- dlib installation
