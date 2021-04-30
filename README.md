@@ -1,13 +1,24 @@
-# Blurfaces
-Si no funciona en tu ordenador es porque tendrás que descargarte el openCV (Visual Studio). Para hacerlo, lo que hice yo fue:
+# Requirements
+
+### Basic Program
+
+In Visual Studio:
 
   1. Solution explorer
   2. Python enviroments
-  3. Click derecho, view all enviroments
-  4. Darle a overview y seleccionar (PyPI)
-  5. Buscar opencv (la última actualización) yo seleccioné opencv-contrib-python (4.5.1.48)
-  6. Ya puedes ejecutar el programa
+  3. Right click, view all enviroments
+  4. Click overview and select (PyPI)
+  5. Search for opencv (last update) I selected opencv-contrib-python (4.5.1.48)
+  6. Now you are done
 
-## OTHER REQUIREMENTS 
+Or:
+
 - Python 3.6
 - `pip install opencv-contrib-python`
+
+### Complex Program
+
+Basic Program requirements and:
+
+- CMake installation
+- dlib installation (CMake installation required to install dlib)
