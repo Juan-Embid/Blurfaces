@@ -19,11 +19,14 @@ def despeje_ptoMedio(x1, y1, x2, y2):
     Mx = (x2 * 2) - x1
     My = (y2 * 2) - y1
     return Mx, My
-def puntos_circunferencia(distancia, P1, P2):
-    C1x = P1 + (distancia * (math.cos(0.7853982)))
-    C1y = P2 + (distancia * (math.sin(0.7853982)))
-    C2x = P1 + (distancia * (math.cos(-0.7853982)))
-    C2y = P2 + (distancia * (math.sin(-0.7853982)))
+def puntos_circunferencia(P1, P2, Cx, Cy):
+    P1x = P1 - Cx
+    dist = calculo_distancia(P1, P2, Cx, Cy)
+    deg = math.acos(P1x / dist)
+    C1x = Cx + dist * math.cos(0.785398163397 + deg)
+    C1y = Cy - dist * math.sin(0.785398163397 + deg)
+    C2x = Cx + dist * math.cos(deg -0.785398163397)
+    C2y = Cy - dist * math.sin(deg -0.785398163397)
     return C1x, C1y, C2x, C2y
 for face in faces:
     x1 = face.left()
@@ -44,12 +47,17 @@ for face in faces:
           ok33 = True
         if ((ok28 == True) and (ok33 == True)):
             Mx, My = despeje_ptoMedio(landmarks.part(33).x, landmarks.part(33).y, landmarks.part(28).x, landmarks.part(28).y)
-            P1, P2 = calculo_ptoMedio(landmarks.part(28).x, landmarks.part(28).y, Mx, My)
-            distancia = calculo_distancia(P1, P2, Mx, My)
-            C1x, C1y, C2x, C2y = puntos_circunferencia(distancia, P1, P2)
-            cv2.circle(img=img, center=(round(C1x), round(C1y)), radius=3, color=(0, 255, 0), thickness=-1)
-            cv2.circle(img=img, center=(round(C2x), round(C2y)), radius=3, color=(0, 255, 0), thickness=-1)
+            MPx, MPy = despeje_ptoMedio(landmarks.part(28).x, landmarks.part(28).y, Mx, My)
+            #P1, P2 = calculo_ptoMedio(landmarks.part(28).x, landmarks.part(28).y, Mx, My)
+            #distancia = calculo_distancia(P1, P2, Mx, My)
+            #C1x, C1y, C2x, C2y = puntos_circunferencia(distancia, P1, P2)
+            Ok1X, Ok1Y, Ok2X, Ok2Y = puntos_circunferencia(MPx, MPy, landmarks.part(33).x, landmarks.part(33).y)
+            cv2.circle(img=img, center=(round(MPx), round(MPy)), radius=3, color=(255, 0, 0), thickness=-1)
+            cv2.circle(img=img, center=(round(Ok1X), round(Ok1Y)), radius=3, color=(255, 0, 0), thickness=-1)
+            cv2.circle(img=img, center=(round(Ok2X), round(Ok2Y)), radius=3, color=(255, 0, 0), thickness=-1)
+            cv2.circle(img=img, center=(round(MPx), round(MPy)), radius=3, color=(255, 0, 0), thickness=-1)
         cv2.circle(img=img, center=(x, y), radius=3, color=(0, 255, 0), thickness=-1) #Dibuja los puntos, comentar
+        cv2.circle(img=img, center=(landmarks.part(33).x, landmarks.part(33).y), radius=3, color=(0, 0, 255), thickness=-1)
 cv2.imshow(winname="https://github.com/Juan-Embid", mat=img) #Un poco de spam por aqu� xd
 cv2.waitKey(delay=0)
 cv2.destroyAllWindows()
