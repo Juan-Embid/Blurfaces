@@ -25,6 +25,9 @@
     <Compile Include="FaceBlurRecognition%28Complex%29.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="quickHull.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="haarcascade_frontalface_default.xml" />
