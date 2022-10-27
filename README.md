@@ -22,3 +22,5 @@ Basic Program requirements and:
 
 - CMake installation
 - dlib installation (CMake installation required to install dlib)
+
+Feel free to ask
